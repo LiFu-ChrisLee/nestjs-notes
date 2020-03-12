@@ -4,20 +4,18 @@
  *@description DTO file for cats controller
  */
 
-class CreateCatDto {
+class Cat {
   readonly name: string;
   readonly age: number;
   readonly breed: string;
 }
 
-class UpdateCatDto {
-  readonly name: string;
-  readonly age: number;
-  readonly breed: string;
-}
+class CreateCatDto extends Cat {}
+
+class UpdateCatDto extends Cat {}
 
 class ListAllEntities {
   readonly limit: number;
 }
 
-export { CreateCatDto, UpdateCatDto, ListAllEntities };
+export { CreateCatDto, UpdateCatDto, ListAllEntities, Cat };
