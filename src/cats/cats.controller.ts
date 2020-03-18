@@ -4,6 +4,7 @@ import {
   Post,
   Body,
   UseFilters,
+  UsePipes,
   // HttpException,
   // HttpStatus,
   // ForbiddenException,
@@ -11,16 +12,18 @@ import {
 import { Cat, CreateCatDto } from './cats.dto';
 import { CatsService } from './cats.service';
 // import { MyForbiddenException } from '../errors/MyForbiddenException';
-import { HttpExceptionFilter } from '../errors/HttpException.filter';
+// import { HttpExceptionFilter } from '../errors/HttpException.filter';
+// import { MyValidationPipe } from '../pipes/MyValidation.pipe';
 
 @Controller('cats')
-@UseFilters(HttpExceptionFilter)
+// @UseFilters(HttpExceptionFilter)
 export class CatsController {
   constructor(private readonly catService: CatsService) {}
 
   @Post()
   // @UseFilters(new HttpExceptionFilter())
   // @UseFilters(HttpExceptionFilter)
+  // @UsePipes(MyValidationPipe)
   async create(@Body() createCatDto: CreateCatDto) {
     return this.catService.create(createCatDto);
   }
