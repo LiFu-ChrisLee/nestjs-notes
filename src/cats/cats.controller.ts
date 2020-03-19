@@ -14,6 +14,7 @@ import {
 import { Cat, CreateCatDto } from './cats.dto';
 import { CatsService } from './cats.service';
 import { Roles } from '../decorators/Roles.decorator';
+// import { User } from '../decorators/User.decorator';
 // import { LoggingInterceptor } from '../interceptors/Logging.interceptor';
 // import { TransformInterceptor } from '../interceptors/Transform.interceptor';
 // import { RolesGuard } from '../guards/Role.guard';
@@ -39,7 +40,10 @@ class CatsController {
 
   @Get()
   // @UseInterceptors(TransformInterceptor)
-  async findAll(): Promise<Cat[]> {
+  async findAll(
+    // @User() user: any
+  ): Promise<Cat[]> {
+    // console.log(user);
     // throw new Error('hhh');
     // throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
     // throw new HttpException(
