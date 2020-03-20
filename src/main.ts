@@ -7,4 +7,5 @@ async function bootstrap() {
   // app.use(logger);
   await app.listen(3000);
 }
-bootstrap();
+
+bootstrap().then(r => r);
